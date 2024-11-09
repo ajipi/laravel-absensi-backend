@@ -14,14 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // tambah 10 data user random
+        User::factory(10)->create();
+
         // tambah 1 data user statik
         User::factory()->create([
             'name' => 'Rizwan Admin',
             'email' => 'rizwan@fic16.com',
             'password' => Hash::make('12345678'),
         ]);
-
-        // tambah 10 data user random
-        User::factory(10)->create();
     }
 }
